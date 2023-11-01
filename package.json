@@ -1,0 +1,26 @@
+{
+  "name": "webpack-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marwinpg/webpack-training.git"
+  },
+  "keywords": [
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "marwin pineda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marwinpg/webpack-training/issues"
+  },
+  "homepage": "https://github.com/marwinpg/webpack-training#readme",
+  "devDependencies": {
+    "webpack": "5.89.0",
+    "webpack-cli": "5.1.4"
+  }
+}
