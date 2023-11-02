@@ -1,8 +1,9 @@
 import Raspberry from "./raspberry.jpeg";
+import altText from "./altText.txt";
 
 function addImage() {
   const img = document.createElement("img");
-  img.alt = "Raspberry";
+  img.alt = altText;
   img.width = 300;
   img.src = Raspberry;
   const body = document.querySelector("body");
