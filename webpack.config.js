@@ -9,6 +9,11 @@ module.exports = {
     filename: "bundle.[contenthash].js",
     path: path.resolve(__dirname, "./dist"),
     publicPath: "dist/",
+    clean: true,
+    // clean: {
+    //   dry: true, // Log the assets that should be removed instead of deleting them.
+    //   keep: /\.css/, // Keep the css files on the dist folder
+    // },
   },
   mode: "none",
   module: {
