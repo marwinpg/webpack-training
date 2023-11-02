@@ -17,9 +17,9 @@ class HelloWorldButton {
   }
 }
 
-const double = (x) => x * 2;
-const addOne = (x) => x + 1;
+// const double = (x) => x * 2;
+// const addOne = (x) => x + 1;
 
-const result = 1 |> double |> addOne;
+// const result = 1 |> double |> addOne;
 
 export default HelloWorldButton;
