@@ -65,6 +65,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "styles.[contenthash].css",
     }),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: "Hello Webpack",
+      meta: {
+        description: "Some description",
+      },
+    }),
   ],
 };
