@@ -1,6 +1,4 @@
-import helloWorld from "./hello-world";
-import addImage from "./add-image";
+import HelloWorldButton from "./components/hello-world-button/hello-world-button";
 
-// Depends on hello-world.js, because there the function was declared
-helloWorld();
-addImage();
+const helloWorldButton = new HelloWorldButton();
+helloWorldButton.render();
