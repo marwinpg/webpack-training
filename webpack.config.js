@@ -1,6 +1,7 @@
 const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -8,7 +9,7 @@ module.exports = {
   output: {
     filename: "bundle.[contenthash].js",
     path: path.resolve(__dirname, "./dist"),
-    publicPath: "dist/",
+    publicPath: "",
     clean: true,
     // clean: {
     //   dry: true, // Log the assets that should be removed instead of deleting them.
@@ -64,5 +65,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "styles.[contenthash].css",
     }),
+    new HtmlWebpackPlugin(),
   ],
 };
