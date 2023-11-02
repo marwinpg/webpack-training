@@ -6,13 +6,14 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "./dist"),
+    publicPath: "dist/",
   },
   mode: "none",
   module: {
     rules: [
       {
         test: /\.(png|jpg|jpeg)$/,
-        type: "asset/resource",
+        type: "asset/inline", // The size of the asset increase, is useful when you need to load files less than 8KB
       },
     ],
   },
