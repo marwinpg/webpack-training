@@ -4,9 +4,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    "hello-world": "./src/hello-world.js",
+    raspberry: "./src/raspberry.js",
+  },
   output: {
-    filename: "bundle.[contenthash].js",
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "./dist"),
     publicPath: "",
     clean: true,
@@ -61,7 +64,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "styles.[contenthash].css",
+      filename: "[name].[contenthash].css",
     }),
     new HtmlWebpackPlugin({
       title: "Hello Webpack",
