@@ -1,6 +1,7 @@
 const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ModuleFederationPlugin } = require("webpack").container;
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -8,7 +9,7 @@ module.exports = {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "./dist"),
-    publicPath: "",
+    publicPath: "http://localhost:9001/",
     clean: true,
   },
   mode: "development",
@@ -58,6 +59,14 @@ module.exports = {
       title: "Hello World",
       template: "src/page-template.hbs",
       description: "Hello world",
+    }),
+    new ModuleFederationPlugin({
+      name: HelloWorldApp,
+      filename: "remoteEntry.js",
+      exposes: {
+        "./HelloWorldButton":
+          "./src/components/hello-world-button/hello-world-button.js",
+      },
     }),
   ],
 };

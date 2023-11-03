@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ModuleFederationPlugin } = require("webpack").container;
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -58,6 +59,12 @@ module.exports = {
       title: "Raspberry",
       template: "src/page-template.hbs",
       description: "Raspberry",
+    }),
+    new ModuleFederationPlugin({
+      name: "RaspberryApp",
+      remotes: {
+        HelloWorldApp: "HelloWorldApp@http://localhost:9001/remoteEntry.js",
+      },
     }),
   ],
 };
