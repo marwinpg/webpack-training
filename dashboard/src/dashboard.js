@@ -1,3 +1,19 @@
+import NavigationBar from "./components/navigation-bar/navigation-bar.js";
+
+const navigationItems = [
+  {
+    url: "/hello-world-page.html",
+    title: "Hello World Page",
+  },
+  {
+    url: "/raspberry-page.html",
+    title: "Raspberry Page",
+  },
+];
+
+const navigationBar = new NavigationBar();
+navigationBar.render(navigationItems);
+
 const url = window.location.pathname;
 
 if (url === "/hello-world-page.html") {
