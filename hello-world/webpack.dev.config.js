@@ -61,7 +61,7 @@ module.exports = {
       description: "Hello world",
     }),
     new ModuleFederationPlugin({
-      name: HelloWorldApp,
+      name: "HelloWorldApp",
       filename: "remoteEntry.js",
       exposes: {
         "./HelloWorldButton":
