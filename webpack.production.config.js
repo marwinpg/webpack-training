@@ -86,7 +86,6 @@ module.exports = {
       title: "Raspberry",
       template: "src/page-template.hbs",
       description: "Raspberry",
-      minify: false,
     }),
   ],
 };
