@@ -9,7 +9,7 @@ module.exports = {
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "./dist"),
-    publicPath: "/static/",
+    publicPath: "http://localhost:9002/",
     clean: true,
   },
   mode: "production",
@@ -63,8 +63,9 @@ module.exports = {
     }),
     new ModuleFederationPlugin({
       name: "RaspberryApp",
-      remotes: {
-        HelloWorldApp: "HelloWorldApp@http://localhost:9001/remoteEntry.js",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./RaspberryPage": "./src/components/raspberry-page/raspberry-page.js",
       },
     }),
   ],
