@@ -1,13 +1,9 @@
 const path = require("path");
-const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
-  entry: {
-    "hello-world": "./src/hello-world.js",
-    raspberry: "./src/raspberry.js",
-  },
+  entry: "./src/raspberry.js",
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "./dist"),
@@ -16,12 +12,12 @@ module.exports = {
   },
   mode: "development",
   devServer: {
-    port: 9000,
+    port: 9002,
     static: {
       directory: path.resolve(__dirname, "./dist"),
     },
     devMiddleware: {
-      index: "index.html",
+      index: "raspberry.html",
       writeToDisk: true,
     },
   },
@@ -37,14 +33,6 @@ module.exports = {
         },
       },
       {
-        test: /\.txt/,
-        type: "asset/source",
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-      {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"], // webpack processes loaders from right to left
       },
@@ -55,14 +43,6 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
-            plugins: [
-              [
-                "@babel/plugin-proposal-pipeline-operator", // take a look at this https://medium.com/@ntnprdhmm/babel-7-pipeline-operator-in-javascript-a7724212b8ba
-                {
-                  proposal: "minimal",
-                },
-              ],
-            ],
           },
         },
       },
@@ -73,17 +53,8 @@ module.exports = {
     ],
   },
   plugins: [
-    new TerserPlugin(),
-    new HtmlWebpackPlugin({
-      filename: "hello-world.html",
-      chunks: ["hello-world"],
-      title: "Hello World",
-      template: "src/page-template.hbs",
-      description: "Hello world",
-    }),
     new HtmlWebpackPlugin({
       filename: "raspberry.html",
-      chunks: ["raspberry"],
       title: "Raspberry",
       template: "src/page-template.hbs",
       description: "Raspberry",
