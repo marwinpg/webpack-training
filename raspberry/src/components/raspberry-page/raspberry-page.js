@@ -1,5 +1,5 @@
-import Heading from "../components/heading/heading";
-import RaspberryImage from "../components/raspberry-image/raspberry-image";
+import Heading from "../heading/heading";
+import RaspberryImage from "../raspberry-image/raspberry-image";
 
 class RaspberryPage {
   render() {
