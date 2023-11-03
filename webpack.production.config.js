@@ -11,7 +11,7 @@ module.exports = {
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "./dist"),
-    publicPath: "",
+    publicPath: "/static/",
     clean: true,
   },
   mode: "production",
@@ -19,6 +19,7 @@ module.exports = {
     splitChunks: {
       chunks: "all",
       minSize: 3000,
+      automaticNameDelimiter: "_",
     },
   },
   module: {
