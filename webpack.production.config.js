@@ -67,9 +67,20 @@ module.exports = {
       filename: "[name].[contenthash].css",
     }),
     new HtmlWebpackPlugin({
-      title: "Hello Webpack",
-      template: "src/index.hbs",
-      description: "Some description",
+      filename: "hello-world.html",
+      chunks: ["hello-world"],
+      title: "Hello World",
+      template: "src/page-template.hbs",
+      description: "Hello world",
+      minify: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "raspberry.html",
+      chunks: ["raspberry"],
+      title: "Raspberry",
+      template: "src/page-template.hbs",
+      description: "Raspberry",
+      minify: false,
     }),
   ],
 };
