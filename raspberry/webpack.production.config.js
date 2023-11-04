@@ -67,6 +67,9 @@ module.exports = {
       exposes: {
         "./RaspberryPage": "./src/components/raspberry-page/raspberry-page.js",
       },
+      remotes: {
+        ImageCaptionApp: "ImageCaptionApp@http://localhost:9003/remoteEntry.js",
+      },
     }),
   ],
 };

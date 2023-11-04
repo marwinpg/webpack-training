@@ -7,6 +7,14 @@ class RaspberryPage {
     heading.render("raspberry");
     const raspberryImage = new RaspberryImage();
     raspberryImage.render();
+
+    import("ImageCaptionApp/ImageCaption").then((ImageCaptionModule) => {
+      const ImageCaption = ImageCaptionModule.default;
+      const imageCaption = new ImageCaption();
+      imageCaption.render(
+        "The raspberry is the edible fruit of a multitude of plant species in the genus Rubus of the rose family"
+      );
+    });
   }
 }
 
